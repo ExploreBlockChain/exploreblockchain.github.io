@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="post">
+  <div class="post-content">
+    {% include min_of_read.html post=page %}
+
+    {{ content }}
+  </div>
+  <div class="tags">
+    <hr>
+    <h2>Tags</h2>
+    {% assign tags = page.tags | replace: '["', '' | replace: '"]', '' | split: ',' %}
+    {% for tag in tags %}
+      <span class="tag primary">{{ tag }}</span>&nbsp;
+    {% endfor %}
+  </div>
+  <div class="social-buttons">
+    {% include share-button.html %}
+  </div>
+</article>
